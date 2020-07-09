@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import getGifs from '../helpers/getGifs';
 
-const useFetchGifs = (category) => {
-  const [state, setstate] = useState({
+const useFetchGifs = (category, limit = 9) => {
+  const [state, setState] = useState({
     images: [],
     loading: true,
   });
 
   useEffect(() => {
-    getGifs(category).then((imgs) => setstate({
+    getGifs(category, limit).then((imgs) => setState({
       images: imgs,
       loading: false,
     }));
-  }, [category]);
+  }, [category, limit]);
 
   return state;
 };

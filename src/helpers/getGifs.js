@@ -1,8 +1,8 @@
-const getGifs = async (search) => {
+const getGIFs = async (search, limit = 9) => {
   const apiKey = 'p3sfQopuPVQGPu7z0smMECu1PCRrYjE2';
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&limit=9&q=${encodeURI(search)}`;
-  const respuesta = await fetch(url);
-  const { data } = await respuesta.json();
+  const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&limit=${limit}&q=${encodeURI(search)}`;
+  const response = await fetch(url);
+  const { data } = await response.json();
 
   return data.map((img) => (
     {
@@ -13,4 +13,4 @@ const getGifs = async (search) => {
   ));
 };
 
-export default getGifs;
+export default getGIFs;

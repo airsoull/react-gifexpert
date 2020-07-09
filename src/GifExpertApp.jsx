@@ -6,7 +6,7 @@ const GifExpertApp = () => {
   const [categories, setCategories] = useState([
     'Hunter X Hunter',
     'One Piece',
-    'boku no hero academia',
+    'Boku no hero academia',
   ]);
 
   return (

@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useFetchGifs from '../hooks/useFetchGifs';
+import useFetchGIFs from '../hooks/useFetchGifs';
 import GifGridItem from './GifGridItem';
 
 const GifGrid = ({ category }) => {
-  const { images, loading } = useFetchGifs(category);
+  const { images, loading } = useFetchGIFs(category);
   return (
     <>
       <h3 className="mt-40">{category}</h3>
       <div className="card-grid animate__animated animate__zoomIn">
-        {loading && <p>Cargando...</p>}
+        {loading && <p>Loading...</p>}
         {
-          images.map((image) => (
+          images.map(({ id, title, url }) => (
             <GifGridItem
-              key={image.id}
-              {...image}
+              key={id}
+              title={title}
+              url={url}
             />
           ))
         }

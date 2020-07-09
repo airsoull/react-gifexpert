@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 const AddCategory = ({ setCategories, placeholderText }) => {
   // Hooks
-  const [inputValue, setinputValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
   // validations
-  const handleInputChange = (e) => setinputValue(e.target.value);
+  const handleInputChange = (e) => setInputValue(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim().length > 2) {
       setCategories((categories) => [inputValue, ...categories]);
-      setinputValue('');
+      setInputValue('');
     }
   };
 
@@ -33,7 +33,7 @@ AddCategory.propTypes = {
 };
 
 AddCategory.defaultProps = {
-  placeholderText: 'Busca tus gifs',
+  placeholderText: 'Search yours GIFs...',
 };
 
 export default AddCategory;
