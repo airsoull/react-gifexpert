@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test for GifExpertApp component should show the component correctly 1`] = `
+<Fragment>
+  <h2>
+     GifExpert! 
+  </h2>
+  <AddCategory
+    placeholderText="Search yours GIFs..."
+    setCategories={[Function]}
+  />
+  <hr />
+  <GifGrid
+    category="Hunter X Hunter"
+    key="Hunter X Hunter"
+  />
+  <GifGrid
+    category="One Piece"
+    key="One Piece"
+  />
+  <GifGrid
+    category="Boku no hero academia"
+    key="Boku no hero academia"
+  />
+</Fragment>
+`;
